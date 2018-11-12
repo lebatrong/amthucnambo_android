@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.TaiKhoan.chinhsuabaiviet.ChinhSuaBaiVietActivity">
+
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/capnhatbaiviet"
+        android:id="@+id/toolbarEditBaiViet"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark">
+        <Button
+            android:textSize="16dp"
+            android:id="@+id/btnluu_editbv"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:background="@color/transparent"
+            android:text="@string/luu"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--<ImageView-->
+                <!--android:id="@+id/imvtest"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp" />-->
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/tenbaiviet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:id="@+id/edttenbaiviet_editbv"
+                android:inputType="text"
+                android:maxLength="100"
+                android:textSize="16dp"
+                android:hint="@string/nhaptenbaiviet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/diachi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:id="@+id/edtdiachi_editbv"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:hint="@string/nhapdiachi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/gia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:id="@+id/edtgia_editbv"
+                android:inputType="numberSigned"
+                android:textSize="16dp"
+                android:hint="@string/nhapgia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/ghichu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:background="@color/transparent"
+                android:id="@+id/edtghichu_editbv"
+                android:inputType="text"
+                android:textSize="16dp"
+                android:hint="@string/nhapghichu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+
+            <!--THÀNH PHẦN-->
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/thanhphan_ct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnchonthanhphan_editbv"
+                android:background="@drawable/button_chonhinhanh"
+                android:textSize="17dp"
+                android:layout_margin="5dp"
+                android:textAllCaps="false"
+                android:text="@string/chonthanhphan"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"  />
+
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+            <!--END THÀNH PHẦN-->
+
+            <!--HÌNH ẢNH-->
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/hinhanh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_marginTop="5dp"
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/frmImv1_editbv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:tag="imv1"
+                                android:id="@+id/imv1_editbv"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorErrorImage"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <ImageView
+                                android:id="@+id/imvDelete1_editbv"
+                                android:layout_gravity="end"
+                                android:src="@drawable/closehinhanh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
+                        </FrameLayout>
+
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/frmImv2_editbv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:tag="imv2"
+                                android:id="@+id/imv2_editbv"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorErrorImage"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <ImageView
+                                android:id="@+id/imvDelete2_editbv"
+                                android:layout_gravity="end"
+                                android:src="@drawable/closehinhanh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/frmImv3_editbv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:tag="imv3"
+                                android:id="@+id/imv3_editbv"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorErrorImage"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <ImageView
+                                android:tag="imv4"
+                                android:id="@+id/imvDelete3_editbv"
+                                android:layout_gravity="end"
+                                android:src="@drawable/closehinhanh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/frmImv4_editbv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:tag="imv5"
+                                android:id="@+id/imv4_editbv"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorErrorImage"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <ImageView
+                                android:id="@+id/imvDelete4_editbv"
+                                android:layout_gravity="end"
+                                android:src="@drawable/closehinhanh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:id="@+id/frmImv5_editbv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/imv5_editbv"
+                                android:scaleType="fitXY"
+                                android:src="@color/colorErrorImage"
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+
+                            <ImageView
+                                android:id="@+id/imvDelete5_editbv"
+                                android:layout_gravity="end"
+                                android:src="@drawable/closehinhanh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </android.support.v4.widget.NestedScrollView>
+
+            <Button
+                android:id="@+id/btnchonhinhanh_editbv"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_chonhinhanh"
+                android:textAllCaps="false"
+                android:text="@string/chonhinhanh"
+                android:textSize="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <View
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine"/>
+
+            <!--END HÌNH ẢNH-->
+
+
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/gioithieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtgioithieu_editbv"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:background="@color/transparent"
+                android:inputType="textMultiLine"
+                android:textSize="16dp"
+                android:hint="@string/nhapgioithieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"/>
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

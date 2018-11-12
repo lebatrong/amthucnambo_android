@@ -1,0 +1,183 @@
+<resources>
+    <string name="app_name" translatable="false">Ẩm thực nam bộ</string>
+    <string name="loikhuvuc">Lỗi khu vực!</string>
+    <string name="chonvitri">Chọn vị trí</string>
+    <string name="dangtaidulieu">Đang tải dữ liệu...</string>
+    <string name="taidulieukhongthanhcong">Tải dữ liệu không thành công, vui lòng thử lại...</string>
+    <string name="tenmonan">Tên món ăn</string>
+    <string name="thanhphan">Thành phần</string>
+    <string name="nhaptenmonan">Nhập tên món ăn</string>
+    <string name="giatientoida">Giá tiền tối đa</string>
+    <string name="nhapgiatientoida">Nhập giá tiền tối đa</string>
+    <string name="thunho">Thu nhỏ</string>
+    <string name="loc">Lọc</string>
+    <string name="phobien">Phổ biến</string>
+    <string name="khuvuc">Khu vực</string>
+    <string name="loaitim">Loại</string>
+    <string name="thucan">Thức ăn</string>
+    <string name="nuocuong">Nước uống</string>
+    <string name="angi">Ăn gì?</string>
+    <string name="uonggi">Uống gì?</string>
+    <string name="loading" translatable="false">Loading</string>
+    <string name="loitaidulieu">Lỗi tải dữ liệu</string>
+    <string name="matkhaukhongkhop">Mật khẩu không khớp</string>
+    <string name="matkhaukhongtrong">Mật khẩu không được trống</string>
+    <string name="nhaplaimatkhaukhongtrong">Nhập lại mật khẩu không được trống</string>
+    <string name="emailkhongtrong">Email không được trống</string>
+    <string name="hotenkhongtrong">Họ tên không được trống</string>
+    <string name="quequankhongtrong">Quê quán không được trống</string>
+    <string name="dulieukhonghople">Dữ liệu không hợp lệ</string>
+    <string name="dangkythatbai">Đăng ký không thành công!</string>
+    <string name="xemchitiet">Xem chi tiết</string>
+    <string name="dangdangky">Đang đăng ký, vui lòng chờ!</string>
+    <string name="dangdangnhap">Đang đăng nhập, vui lòng chờ!</string>
+    <string name="dangnhapthatbai">Đăng nhập thất bại</string>
+    <string name="loitaidulieukhoidonglai">Lỗi tải dữ liệu, vui lòng khởi động lại ứng dụng!</string>
+    <string name="khongcodulieu">Không có dữ liệu</string>
+    <string name="gioithieu">Giới thiệu</string>
+    <string name="binhluancuaban">Viết đánh giá</string>
+    <string name="binhluan">Đánh giá</string>
+    <string name="binhluankhongqua">(Không quá 100 từ)</string>
+    <string name="danhgia">Đánh giá:</string>
+    <string name="dangbinhluan">Đăng</string>
+    <string name="huy">Hủy</string>
+    <string name="ok">Xác nhận</string>
+    <string name="batdau">Bắt đầu</string>
+    <string name="luubaiviet">Bạn muốn lưu bài viêt?</string>
+    <string name="xoabaiviet">Bạn muốn xóa bài viết đã lưu?</string>
+    <string name="xoabaivietthanhcong">Xóa bài viết đã lưu thành công!</string>
+    <string name="danhgiathanhcong">Đánh giá bài viết thành công!</string>
+    <string name="xoabaivietkhongthanhcong">Xóa bài viết đã lưu không thành công, vui lòng thử lại!</string>
+    <string name="danhgiakhongthanhcong">Đánh giá bài viết đã lưu không thành công, vui lòng thử lại!</string>
+    <string name="luubaivietthanhcong">Lưu bài viết thành công!</string>
+    <string name="luubaivietkhongthanhcong">Lưu bài viết không thành công, vui lòng thử lại!</string>
+    <string name="vuilongdangnhap">Vui lòng đăng nhập để sử dụng chức năng!</string>
+    <string name="goiychoban">Gợi ý cho bạn:</string>
+    <string name="gia">Giá:</string>
+    <string name="ghichu">Ghi chú:</string>
+    <string name="loidulieu">Lỗi dữ liệu!</string>
+    <string name="thanhphan_ct">Thành phần:</string>
+    <string name="diachi">Địa chỉ:</string>
+    <string name="chuacodanhgia">Chưa có đánh giá</string>
+    <string name="tatca">Tất cả</string>
+    <string name="dangnhapbang">Đăng nhập bằng</string>
+    <string name="dangnhap">Đăng nhập</string>
+    <string name="chonquocgia">Chọn quốc gia:</string>
+    <string name="taikhoan">Tài khoản</string>
+    <string name="sodienthoai">Số điện thoại</string>
+    <string name="sodienthoaikhonghople">Số điện thoại không hợp lệ</string>
+    <string name="verrycode">Mã xác thực</string>
+    <string name="xacnhan">Xác nhận</string>
+    <string name="guilai">Gửi lại</string>
+    <string name="codekhongduoctrong">Mã không được trống</string>
+    <string name="codekhonghople">Mã không hợp lệ</string>
+    <string name="baivietdaluu">Bài viết đã lưu</string>
+    <string name="chitiettaikhoan">Tài khoản</string>
+    <string name="dangnhapdanhgia">Đăng nhập để đánh giá</string>
+    <string name="danhgiakhongduoctrong">Đánh giá không được trống</string>
+    <string name="danhgiakhongqua">Đánh giá không quá 100 từ</string>
+    <string name="danhgiakhonghople">Đánh giá không hợp lệ</string>
+    <string name="dangky">Đăng ký</string>
+    <string name="dangxuat">Đăng xuất</string>
+    <string name="capnhatthongtin">Cập nhật</string>
+    <string name="quenmatkhau">Quên mật khẩu?</string>
+    <string name="matkhau">Mật khẩu</string>
+    <string name="capnhatmatkhau">Cập nhật mật khẩu</string>
+    <string name="tendangnhap" translatable="false">Email</string>
+    <string name="hoten">Họ tên</string>
+    <string name="nhaplaimatkhau">Nhập lại mật khẩu</string>
+    <string name="dangcapnhatlai">Đang cập nhật thông tin...</string>
+    <string name="capnhatthanhcong">Cập nhật thành công!</string>
+    <string name="kiemtramail">Vui lòng kiểm tra mail để tiếp tục!</string>
+    <string name="capnhatthatbai">Cập nhật thất bại!</string>
+    <string name="gioitinh">Giới tính</string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+    <string name="ngaysinh">Ngày sinh</string>
+    <string name="quequan">Quê quán</string>
+    <string name="sosao">Số sao:</string>
+    <string name="norate" translatable="false">✩</string>
+    <string name="rate" translatable="false">★</string>
+    <string name="rate0" translatable="false">✩✩✩✩✩</string>
+    <string name="rate1" translatable="false">★✩✩✩✩</string>
+    <string name="rate2" translatable="false">★★✩✩✩</string>
+    <string name="rate3" translatable="false">★★★✩✩</string>
+    <string name="rate4" translatable="false">★★★★✩</string>
+    <string name="rate5" translatable="false">★★★★★</string>
+    <string name="caidat">Cài đặt</string>
+    <string name="chonngonngu">Chọn ngôn ngữ:</string>
+    <string name="thongtinphanmem">Thông tin phần mềm</string>
+    <string name="thanhcong">Thành công</string>
+    <string name="loctheo">Lọc theo</string>
+    <string name="trangcanhan">Trang cá nhân</string>
+    <string name="giathamkhao">Giá:</string>
+
+    <string name="dangtai">Đang tải</string>
+
+    <string name="locbaiviet">Tìm kiếm bài viết</string>
+
+
+    <string name="themgoiy">Thêm gợi ý</string>
+    <string name="themthanhphan">Thêm thành phần</string>
+    <string name="banmuondangxuat">Bạn muốn đăng xuất?</string>
+    <string name="capnhatthongtinadmin">Cập nhật tài khoản</string>
+    <string name="open" translatable="false">Open</string>
+    <string name="close" translatable="false">Close</string>
+    <string name="thembaivietmoi">Hôm nay có món ăn hay nước uống mới?</string>
+    <string name="chonhinhanh">Chọn hình ảnh</string>
+
+    <string name="dang">Đăng</string>
+    <string name="luu">Lưu</string>
+    <string name="baivietmoi">Bài viết mới</string>
+    <string name="capnhatbaiviet">Cập nhật bài viết</string>
+
+
+    <string name="tenbaiviet">Tên bài viết:</string>
+    <string name="nhaptenbaiviet">Nhập tên bài viết</string>
+    <string name="nhapdiachi">Nhập địa chỉ</string>
+    <string name="nhapgia">Nhập giá</string>
+    <string name="nhapgioithieu">Nhập giới thiệu</string>
+    <string name="nhapghichu">Nhập ghi chú</string>
+    <string name="chonthanhphan">Chọn thành phần</string>
+    <string name="chonkhuvuc">Chọn khu vực</string>
+    <string name="loaibaiviet">Loại bài viết:</string>
+    <string name="hinhanh">Hình ảnh:</string>
+
+
+    <string name="den">Đến</string>
+    <string name="taobaiviet">Tạo bài viết:</string>
+    <string name="dangdangbaiviet">Đang đăng bài viết, xin đợi!</string>
+    <string name="dangbaivietthanhcong">Đăng bài viết thành công!</string>
+    <string name="dangbaivietthatbai">Đăng bài viết thất bại!</string>
+    <string name="baivietcuaban">Bài viết của bạn:</string>
+    <string name="chinhsua">Sửa</string>
+    <string name="xoa">Xóa</string>
+    <string name="banmuonxoabaiviet">Bạn muốn xóa bài viết?</string>
+    <string name="vangxoano">Vâng, xóa nó!</string>
+    <string name="xoathanhcong">Xóa bài viết thành công!</string>
+    <string name="xoathatbai">Xóa bài viết thất bại!</string>
+
+
+    <string name="loitenbaiviet">Tên bài viết không hợp lệ!</string>
+    <string name="loidiachibaiviet">Địa chỉ không hợp lệ!</string>
+    <string name="loigioithieubaiviet">Giới thiệu  không hợp lệ!</string>
+    <string name="loithanhphanbaiviet">Thành phần không hợp lệ!</string>
+    <string name="loigiabaiviet">Giá không hợp lệ!</string>
+    <string name="loichonkhuvucbaiviet">Khu vực không hợp lệ!</string>
+    <string name="loichonhinhanhbaiviet">Hình ảnh không hợp lệ!</string>
+
+
+    <string name="chinhsuabaivietthanhcong">Chỉnh sửa bài viết thành công!</string>
+    <string name="chinhsuabaivietthatbai">Chỉnh sửa bài viết thất bại!</string>
+
+    <string name="loctatcafilter">Lọc tất cả</string>
+    <string name="loctuychonfilter">Lọc tùy chọn</string>
+    <string name="kieulocfilter">Kiểu lọc:</string>
+    <string name="loctheokhuvucfilter">Lọc theo khu vực:</string>
+    <string name="loctheoloaifilter">Lọc theo loại:</string>
+
+    <string name="dataixong">Đã tải xong!</string>
+
+
+
+</resources>

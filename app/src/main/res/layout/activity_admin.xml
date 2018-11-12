@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawarlayoutadmin"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Views.TaiKhoan.admin.AdminActivity">
+
+    <LinearLayout
+        android:background="@color/colorBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            app:titleTextColor="@color/colorWhite"
+            android:id="@+id/toolbaradmin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:background="@drawable/backgrount_title"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:text="@string/taobaiviet"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:background="@drawable/background_taobaivietmoi"
+                    android:id="@+id/tvThembaivietmoi"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="35dp"
+                    android:text="@string/thembaivietmoi"
+                    android:textColor="@color/colorTextMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <android.support.design.card.MaterialCardView
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:background="@drawable/backgrount_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:text="@string/baivietcuaban"
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:padding="4dp"
+                        android:id="@+id/imvFilter"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+            </android.support.design.card.MaterialCardView>
+
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:layout_marginTop="2dp"
+                android:id="@+id/rclvBaiVietCuaToi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:fitsSystemWindows="true"
+        android:id="@+id/navigationviewadmin"
+        app:headerLayout="@layout/header_admin"
+        android:layout_gravity="end"
+        android:background="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:itemTextColor="@color/colorTextMain"
+        app:menu="@menu/menuadmin">
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

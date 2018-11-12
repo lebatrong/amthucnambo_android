@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.Main.SearchActivity">
+
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="@color/colorWhite"
+        app:title="@string/locbaiviet"
+        android:id="@+id/toolbarSearch"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--HIỆN LỌC-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rltlHienLoc"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imvhien"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_expand_more_black_24dp"
+                    android:textAllCaps="false" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/lnlLoc"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="@string/khuvuc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/btnchonlaikhuvuc"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_loc"
+                        android:text="@string/chonkhuvuc"
+                        android:layout_width="match_parent"
+                        android:layout_height="37dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:paddingBottom="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="@string/loaitim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                   <RadioGroup
+                       android:paddingLeft="20dp"
+                       android:orientation="horizontal"
+                       android:id="@+id/rdoloaitim"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <RadioButton
+                           android:paddingRight="10dp"
+                           android:checked="true"
+                           android:text="@string/thucan"
+                           android:id="@+id/rdothucan"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+                       <RadioButton
+                           android:text="@string/nuocuong"
+                           android:id="@+id/rdonuocuong"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+
+                   </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="@string/tenmonan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:background="@color/transparent"
+                        android:id="@+id/edtTenMonAn"
+                        android:hint="@string/nhaptenmonan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="@string/thanhphan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/spinnerthanhphan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </Spinner>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="@string/giatientoida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvgiatientoida"
+                        android:gravity="center"
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:text="0 đ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <SeekBar
+                        android:id="@+id/seekbartien"
+                        android:thumb="@drawable/money"
+                        android:max="30000000"
+                        android:progress="0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnloc"
+                        android:background="@drawable/button_loc"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/loc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp" />
+
+                    <ImageView
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/imvan"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_expand_less_black_24dp"
+                        android:textAllCaps="false" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="5dp"
+        android:id="@+id/rclvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

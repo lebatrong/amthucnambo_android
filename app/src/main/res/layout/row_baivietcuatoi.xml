@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:paddingBottom="1dp">
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ImageView
+                android:src="@color/colorErrorImage"
+                android:id="@+id/imvHinhDacSan_mbv"
+                android:layout_width="130dp"
+                android:layout_height="130dp">
+            </ImageView>
+
+            <LinearLayout
+                android:paddingLeft="4dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:id="@+id/tvtenbaiviet_mbv"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:text="Tên bài viết"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/diachi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvdiachi_mbv"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="Địa chỉ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/gia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textColor="@color/colorRed"
+                        android:id="@+id/tvgiaban_mbv"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="90000000đ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginRight="3dp"
+                        android:background="@drawable/button_green"
+                        android:textAllCaps="false"
+                        android:textSize="13dp"
+                        android:id="@+id/btnchinhsua_mbv"
+                        android:text="@string/chinhsua"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp" />
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/button_red"
+                        android:textAllCaps="false"
+                        android:textSize="13dp"
+                        android:id="@+id/btnxoa_mbv"
+                        android:text="@string/xoa"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.design.card.MaterialCardView>
+
+</LinearLayout>

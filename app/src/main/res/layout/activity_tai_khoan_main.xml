@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.TaiKhoan.TaiKhoanMainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.Toolbar
+            app:titleTextColor="@color/colorWhite"
+            android:id="@+id/toolbarAccount"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:layout_collapseMode="parallax">
+
+            <ImageView
+                android:id="@+id/imvsetting"
+                android:src="@drawable/setting"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <android.support.v4.widget.NestedScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:src="@color/colorLine"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="#b4b4b4"
+                            android:id="@+id/imvanhdaidien"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tvten_cttk"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="19dp"
+                                android:text="Tên tài khoản"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/tvemai_cttk"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="2dp"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:text="(lebatrong27091997@vulte.gmail.edu.vn)"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imvgioitinh_cttk"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:src="@drawable/gioitinhnam"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:gravity="end"
+                                    android:layout_alignParentBottom="true"
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Button
+                                        android:layout_marginRight="10dp"
+                                        android:id="@+id/btncapnhat_cttk"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="#00000000"
+                                        android:drawableLeft="@drawable/edit"
+                                        android:text="@string/capnhatthongtin"
+                                        android:textAllCaps="false" />
+
+                                    <Button
+                                        android:background="#00000000"
+                                        android:layout_marginRight="10dp"
+                                        android:drawablePadding="5dp"
+                                        android:drawableLeft="@drawable/logout"
+                                        android:textAllCaps="false"
+                                        android:id="@+id/btnLogOut"
+                                        android:text="@string/dangxuat"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.design.card.MaterialCardView>
+
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:src="@drawable/gim"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="left|center"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:padding="5dp"
+                                android:text="@string/baivietdaluu"
+                                android:textSize="18dp"
+                                android:textColor="@color/colorBlack"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                            <Spinner
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:paddingRight="5dp"
+                                android:id="@+id/spinnerloc_tk"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </Spinner>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorLine"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="2dp"
+                            android:id="@+id/rclvBaiVietDaLuu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                </android.support.design.card.MaterialCardView>
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

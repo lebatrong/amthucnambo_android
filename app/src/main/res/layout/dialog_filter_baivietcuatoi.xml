@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:text="@string/kieulocfilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/sbkieuloc_filter"
+            style="@style/SwitchButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswThumbHeight="22dp"
+            app:kswThumbRangeRatio="2"
+            app:kswThumbWidth="20dp"
+            app:kswTintColor="@color/colorBlue" />
+
+        <TextView
+            android:id="@+id/tvkieuloc_filter"
+            android:textSize="17dp"
+            android:textColor="@color/colorTextMain"
+            android:gravity="center"
+            android:text="@string/loctatcafilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        />
+
+    <LinearLayout
+        android:id="@+id/lnlCustomLoc_filter"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:text="@string/loctheokhuvucfilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:background="@drawable/button_loc"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:id="@+id/btnChonKhuVuc_dialogfilter"
+            android:text="@string/chonkhuvuc"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:text="@string/loctheoloaifilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rodthucan_dialogfilter"
+                android:layout_weight="1"
+                android:text="@string/thucan"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rodnuocuong_dialogfilter"
+                android:layout_weight="1"
+                android:text="@string/nuocuong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_alignParentRight="true"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/button_green"
+            android:id="@+id/btnLoc_dialogfilter"
+            android:text="@string/loc"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="3dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

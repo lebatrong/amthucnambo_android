@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1065129839596",
+    "firebase_url": "https://thucannambo.firebaseio.com",
+    "project_id": "thucannambo",
+    "storage_bucket": "thucannambo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065129839596:android:b2e01ca1408b91da",
+        "android_client_info": {
+          "package_name": "lbt.com.amthuc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065129839596-ptgn5tkueffu31qepvels1ok35vccu4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX5O2BsZDy5T_s6XKWh8bflbAdqUtZ3hw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

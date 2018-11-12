@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.FplashScreens.IndexActivity"
+    android:background="@drawable/background_anuonggi">
+
+
+    <TextView
+        android:paddingLeft="30dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:fontFamily="@font/bambola"
+        android:textSize="40dp"
+        android:text="@string/den"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnchontinhthanh"
+        android:foreground="?attr/selectableItemBackground"
+        android:textStyle="bold"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_chonkhuvuc"
+        android:textSize="40dp"
+        android:fontFamily="@font/koni"
+        android:textAllCaps="false"
+        android:text="@string/chonvitri"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@drawable/angi"
+        android:textStyle="bold"
+        android:textColor="#ec753e"
+        android:fontFamily="@font/bambola"
+        android:textSize="55dp"
+        android:text="@string/angi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_gravity="right"
+        android:drawableLeft="@drawable/coffe"
+        android:textStyle="bold"
+        android:textColor="#0bdabb"
+        android:fontFamily="@font/bambola"
+        android:textSize="55dp"
+        android:text="@string/uonggi"
+        android:paddingRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:enabled="false"
+        android:visibility="invisible"
+        android:id="@+id/btnbatdau"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:textColor="#000"
+        android:background="@drawable/button_batdau"
+        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:text="@string/batdau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

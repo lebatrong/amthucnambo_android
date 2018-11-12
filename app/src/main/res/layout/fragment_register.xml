@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.LoginRegister.RegisterFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginBottom="5dp"
+                android:id="@+id/tilemail_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <lbt.com.amthuc.customView.CustomEditText
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/tendangnhap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginBottom="5dp"
+                android:id="@+id/tilhoten_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <lbt.com.amthuc.customView.CustomEditText
+                    android:inputType="text"
+                    android:hint="@string/hoten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginBottom="5dp"
+                android:id="@+id/tilmatkhau_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <lbt.com.amthuc.customView.CustomEditTextPassword
+                    android:hint="@string/matkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginBottom="5dp"
+                android:id="@+id/tilnhaplaimatkhau_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <lbt.com.amthuc.customView.CustomEditTextPassword
+                    android:hint="@string/nhaplaimatkhau"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginBottom="5dp"
+                android:id="@+id/tilquequan_res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <lbt.com.amthuc.customView.CustomEditText
+                    android:inputType="text"
+                    android:hint="@string/quequan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"
+                android:text="@string/gioitinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdonam_res"
+                    android:checked="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/nam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/rdonu_res"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/nu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="16dp"
+                android:text="@string/ngaysinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_marginBottom="10dp"
+                android:id="@+id/btnngaysinh_res"
+                android:textSize="16dp"
+                android:text="01/01/1900"
+                android:layout_gravity="start"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:textAllCaps="false"
+                android:background="@color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btndangky_res"
+                android:textSize="17dp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
+                android:text="@string/dangky"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</LinearLayout>

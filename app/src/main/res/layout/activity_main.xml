@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.Main.MainActivity"
+    android:background="@color/colorBackground">
+
+    <android.support.v7.widget.Toolbar
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:paddingRight="20dp"
+            android:id="@+id/imvLogin"
+            android:layout_gravity="left"
+            android:src="@drawable/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_border_width="1dp"
+            app:civ_border_color="#5e5e5e"
+            android:visibility="gone"
+            android:id="@+id/imvUser"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="left"
+            android:src="@drawable/user"
+            android:layout_width="36dp"
+            android:layout_height="36dp" />
+
+        <RadioGroup
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:textStyle="bold"
+                android:textColor="@drawable/custom_textchane_menu"
+                android:id="@+id/rdoangi"
+                android:checked="true"
+                android:paddingRight="10dp"
+                android:paddingLeft="35dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/custom_radio_angi"
+                android:button="@android:color/transparent"
+                android:text="@string/angi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:textStyle="bold"
+                android:textColor="@drawable/custom_textchane_menu"
+                android:id="@+id/rdouonggi"
+                android:checked="false"
+                android:paddingRight="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/custom_radio_uonggi"
+                android:button="@android:color/transparent"
+                android:text="@string/uonggi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imvSearch"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:src="@drawable/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.Toolbar>
+
+   <android.support.v4.view.ViewPager
+       android:id="@+id/vpMain"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+   </android.support.v4.view.ViewPager>
+
+
+
+</LinearLayout>

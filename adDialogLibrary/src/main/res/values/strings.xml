@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ad Library</string>
+
+    <string name="progressActivityErrorButton">Reload</string>
+    <string name="progressActivityEmptyTitlePlaceholder">Not loaded to any content!</string>
+    <string name="progressActivityEmptyContentPlaceholder">We couldn\'t find anything. Tap the button to take your first image</string>
+    <string name="progressActivityErrorTitlePlaceholder">No Connection</string>
+    <string name="progressActivityErrorContentPlaceholder">The network is not working, the load fails.</string>
+</resources>
