@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity">
+
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="@color/colorWhite"
+        android:id="@+id/toolbar_dsthanhphan"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:title="@string/thanhphan">
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:text="@string/danhsachthanhphan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <org.angmarch.views.NiceSpinner
+                android:layout_weight="1"
+                android:id="@+id/nice_spinnerthanhphan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rclvThanhPhan_tp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</LinearLayout>

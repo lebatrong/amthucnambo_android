@@ -11,16 +11,30 @@
         <item
             android:id="@+id/itthemgoiy"
             android:icon="@drawable/ic_plus"
-            android:title="@string/themgoiy"/>
-
-        <item
-            android:id="@+id/itthemthanhphan"
-            android:icon="@drawable/ic_playlist_add_black_24dp"
-            android:title="@string/themthanhphan"/>
-
+            android:title="@string/goiy"/>
 
     </group>
 
+    <group android:checkableBehavior="single">
+        <item android:title="@string/thanhphan">
+            <menu>
+
+                <item
+                    android:id="@+id/itthemthanhphan"
+                    android:icon="@drawable/ic_playlist_add_black_24dp"
+                    android:title="@string/themthanhphan"/>
+
+                <item
+                    android:id="@+id/itthanhphan"
+                    android:icon="@drawable/ic_view_headline_black_24dp"
+                    android:title="@string/danhsachthanhphan"/>
+
+            </menu>
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
 
     <item android:title="@string/taikhoan">
         <menu>
@@ -38,6 +52,8 @@
                 android:title="@string/caidat"/>
         </menu>
     </item>
+
+    </group>
 
 
 

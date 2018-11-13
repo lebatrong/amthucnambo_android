@@ -11,7 +11,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -28,7 +27,6 @@ import android.widget.Toast;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.gson.Gson;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kyleduo.switchbutton.SwitchButton;
@@ -38,11 +36,11 @@ import com.orhanobut.dialogplus.ViewHolder;
 import java.util.ArrayList;
 
 import lbt.com.amthuc.Presenters.Account.admin.logicAdmin;
-import lbt.com.amthuc.Presenters.Account.iAccount;
-import lbt.com.amthuc.Presenters.Account.lAccount;
 import lbt.com.amthuc.Presenters.LoginRegister.ilogin;
 import lbt.com.amthuc.Presenters.LoginRegister.llogin;
 import lbt.com.amthuc.R;
+import lbt.com.amthuc.Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity;
+import lbt.com.amthuc.Views.TaiKhoan.thanhphan.ThemThanhPhanActivity;
 import lbt.com.amthuc.Views.ChiTietBaiViet.ChiTietBaiVietActivity;
 import lbt.com.amthuc.Views.Main.SettingActivity;
 import lbt.com.amthuc.Views.TaiKhoan.BaiVietDaLuuActivity;
@@ -469,7 +467,6 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
             adapterRclv.setOnItemClickListener(new aRclvBaiVietCuaToi.OnItemClickListener() {
                 @Override
                 public void onItemClick(View itemView, int position) {
-                    Log.e("kiemtra",new Gson().toJson(listLoadmore.get(position)));
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("baiviet", listLoadmore.get(position));
                     bundle.putString("loai", "monan");
@@ -499,6 +496,12 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
                 break;
             case R.id.itthemgoiy:
                 break;
+            case R.id.itthemthanhphan:
+                startActivity(new Intent(this,ThemThanhPhanActivity.class));
+                break;
+             default:
+                    startActivity(new Intent(this,DanhSachThanhPhanActivity.class));
+                    break;
         }
         drawerLayout.closeDrawers();
         return true;
