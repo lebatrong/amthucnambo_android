@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.util.ArrayList;
 
 import lbt.com.amthuc.Presenters.FplashScreens.igetdataapp;
@@ -23,7 +25,6 @@ import lbt.com.amthuc.Views.ChiTietBaiViet.ChiTietBaiVietActivity;
 import lbt.com.amthuc.Views.FplashScreens.IndexActivity;
 import lbt.com.amthuc.customAdapter.aRclvChung;
 import lbt.com.amthuc.customAdapter.aRclvDacSan;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 
@@ -39,7 +40,6 @@ public class UongGiFragment extends Fragment implements igetdataapp,iuonggi {
     aRclvDacSan adapterDacSanUong;
 
     luonggi mUongGi;
-    CustomDialogLoading mDialogLoading;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,7 +49,7 @@ public class UongGiFragment extends Fragment implements igetdataapp,iuonggi {
 
         initView(v);
         getData();
-        mDialogLoading.showDialog("Loading..");
+        WaitDialog.show(getContext(),"Loading");
 
 
         return v;
@@ -64,8 +64,6 @@ public class UongGiFragment extends Fragment implements igetdataapp,iuonggi {
         rclvDatBiet = v.findViewById(R.id.rclvUongDatBiet);
 
         mUongGi = new luonggi(this);
-        mDialogLoading = new CustomDialogLoading(getContext());
-
 
     }
 
@@ -129,7 +127,7 @@ public class UongGiFragment extends Fragment implements igetdataapp,iuonggi {
 
     @Override
     public void danhsachbaivietdacsan_uonggi(final ArrayList<objbaiviet_app> list) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(list!=null) {
             adapterDacSanUong = new aRclvDacSan(getActivity(), list);
 
@@ -156,7 +154,7 @@ public class UongGiFragment extends Fragment implements igetdataapp,iuonggi {
 
     @Override
     public void danhsachbaivietphobien_uonggi(final ArrayList<objbaiviet_app> list) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(list!=null) {
             LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
             rclvChung.setHasFixedSize(true);

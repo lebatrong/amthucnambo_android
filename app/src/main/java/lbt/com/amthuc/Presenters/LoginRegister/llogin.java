@@ -158,8 +158,7 @@ public class llogin {
 
             @Override
             public void onVerificationFailed(FirebaseException e) {
-                Log.e("kiemtra",e.getMessage());
-                mInterface.result_dangnhap_sdt(false);
+                mInterface.ResultLogin(false);
             }
 
             @Override
@@ -189,14 +188,14 @@ public class llogin {
                             mRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    //Có người dùng.
                                     if(dataSnapshot.getValue()!=null){
                                         objnguoidungs obj = dataSnapshot.getValue(objnguoidungs.class);
                                         objnguoidung_app muser = new objnguoidung_app();
                                         muser.setNguoidung(obj);
                                         muser.setPassword("");
                                         downloadAvatar(muser, false);
-                                        mInterface.result_dangnhap_sdt(true);
-                                    }else {
+                                    }else { // Chưa có người dùng
                                         final objnguoidung_app nguoidung = new objnguoidung_app();
                                         objnguoidungs mUser = new objnguoidungs();
                                         mUser.setAvatar("");
@@ -215,12 +214,12 @@ public class llogin {
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
                                                         saveDataUser(nguoidung,false);
-                                                        mInterface.result_dangnhap_sdt(true);
                                                     }
                                                 }).addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
                                                 Log.e(TAG, e.toString());
+                                                mInterface.ResultLogin(false);
                                                 mAuth.signOut();
                                             }
                                         });
@@ -229,10 +228,11 @@ public class llogin {
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
                                     mAuth.signOut();
+                                    mInterface.ResultLogin(false);
                                 }
                             });
                         } else {
-                            mInterface.result_dangnhap_sdt(false);
+                            mInterface.ResultLogin(false);
                         }
                     }
                 });
@@ -246,6 +246,7 @@ public class llogin {
         editor.clear();
         Gson gson = new Gson();
         editor.putString("user",gson.toJson(user));
+        Log.e("kiemtra","save: "+gson.toJson(user));
         editor.commit();
         if(!isListenner)
             mInterface.ResultLogin(true);
@@ -257,8 +258,10 @@ public class llogin {
         Gson gson = new Gson();
         SharedPreferences sharedPreferences = context.getSharedPreferences("dataUser",Context.MODE_PRIVATE);
         String strUser = sharedPreferences.getString("user","");
-        if(strUser.matches(""))
+        if(strUser.matches("")) {
+            FirebaseAuth.getInstance().signOut();
             return null;
+        }
         else{
             return gson.fromJson(strUser,objnguoidung_app.class);
         }

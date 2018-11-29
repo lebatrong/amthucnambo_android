@@ -59,7 +59,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".Views.TaiKhoan.chinhsuabaiviet.ChinhSuaBaiVietActivity" />
         <activity android:name=".Views.TaiKhoan.thanhphan.ThemThanhPhanActivity" />
-        <activity android:name=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity"></activity>
+        <activity android:name=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity" />
+        <activity android:name=".Views.TaiKhoan.ThemGoiY.ThemGoiYActivity"></activity>
     </application>
 
 </manifest>

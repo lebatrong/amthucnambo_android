@@ -23,6 +23,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -32,7 +34,6 @@ import lbt.com.amthuc.R;
 import lbt.com.amthuc.Views.ChiTietBaiViet.ChiTietBaiVietActivity;
 import lbt.com.amthuc.customAdapter.aRclvDacSan;
 import lbt.com.amthuc.customAdapter.aSnThanhPhan;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
@@ -60,7 +61,6 @@ public class SearchActivity extends AppCompatActivity implements ifilter {
     ArrayList<objthanhphan> mlistThanhPhan;
     aSnThanhPhan adapterThanhPhan;
 
-    CustomDialogLoading mDialogLoading;
 
     ArrayList<objbaiviet_app> mListResultSearch;
 
@@ -110,7 +110,7 @@ public class SearchActivity extends AppCompatActivity implements ifilter {
             @Override
             public void onClick(View view) {
                 if(!btnChonLaiKV.getText().toString().matches(getText(R.string.chonkhuvuc).toString())){
-                    mDialogLoading.showDialog("Loading..");
+                    WaitDialog.show(SearchActivity.this,"Loading");
                     String tenmonan = edtTenMon.getText().toString();
                     long giatien = sbTien.getProgress();
                     String mathanhphan = mThanhPhan.getMathanhphan();
@@ -194,7 +194,6 @@ public class SearchActivity extends AppCompatActivity implements ifilter {
         edtTenMon = findViewById(R.id.edtTenMonAn);
         spinnerThanhPhan = findViewById(R.id.spinnerthanhphan);
         rclvSearch = findViewById(R.id.rclvSearch);
-        mDialogLoading = new CustomDialogLoading(this);
         rdoMonAn = findViewById(R.id.rdothucan);
         rdoNuocUong = findViewById(R.id.rdonuocuong);
 
@@ -269,7 +268,7 @@ public class SearchActivity extends AppCompatActivity implements ifilter {
     public void ketquatimkiem(ArrayList<objbaiviet_app> baiviet, boolean coketqua) {
 
         //TẢI XONG DỮ LIỆU DISMISS DIALOG
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
 
         if(coketqua) {
             rclvSearch.setVisibility(View.VISIBLE);

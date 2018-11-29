@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ import java.util.List;
 
 import lbt.com.amthuc.Presenters.Account.DangBaiViet.logicDangBaiViet;
 import lbt.com.amthuc.R;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 import lbt.com.amthuc.models.objectClass.firebase.objchitietbaiviet;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
@@ -63,7 +63,6 @@ public class DangBaiVietActivity extends AppCompatActivity implements iViewDangB
 
     logicDangBaiViet mLogic;
 
-    CustomDialogLoading mDialogLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -289,8 +288,6 @@ public class DangBaiVietActivity extends AppCompatActivity implements iViewDangB
         edtGioiThieu = findViewById(R.id.edtgioithieu_baiviet);
         edtTen = findViewById(R.id.edttenbaiviet_baiviet);
 
-        mDialogLoading = new CustomDialogLoading(this);
-
         mGetData = new getDataApp(this);
 
     }
@@ -453,12 +450,12 @@ public class DangBaiVietActivity extends AppCompatActivity implements iViewDangB
 
         mLogic.dangbaiviet(lImv,chitiet,mKhuVucBaiViet,rdoThucAn.isChecked());
         btnDang.setEnabled(false);
-        mDialogLoading.showDialog("Loading..");
+        WaitDialog.show(this, "Loading");
     }
 
     @Override
     public void resultDangBaiViet(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(isSuccess){
             Toast.makeText(this, getText(R.string.dangbaivietthanhcong), Toast.LENGTH_SHORT).show();
             finish();

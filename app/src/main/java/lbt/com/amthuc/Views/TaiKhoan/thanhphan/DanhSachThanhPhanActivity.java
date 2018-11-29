@@ -19,6 +19,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.kongzue.dialog.listener.InputDialogOkButtonClickListener;
 import com.kongzue.dialog.v2.DialogSettings;
 import com.kongzue.dialog.v2.InputDialog;
+import com.kongzue.dialog.v2.WaitDialog;
 
 import org.angmarch.views.NiceSpinner;
 
@@ -31,7 +32,6 @@ import lbt.com.amthuc.Presenters.Account.ThanhPhan.logicThanhPhan;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.customAdapter.aRclvThanhPhan;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 
 import static com.kongzue.dialog.v2.DialogSettings.TYPE_IOS;
 
@@ -42,7 +42,6 @@ public class DanhSachThanhPhanActivity extends AppCompatActivity implements iVie
     aRclvThanhPhan mAdapter;
     RecyclerView rclvDanhSach;
     NiceSpinner spnThanhPhan_ds;
-    CustomDialogLoading mDialog;
     ArrayList<objthanhphan> listThanhPhan;
 
     private Toolbar toolbar;
@@ -56,14 +55,14 @@ public class DanhSachThanhPhanActivity extends AppCompatActivity implements iVie
     }
 
     private void setupSpinner() {
-        mDialog.showDialog(getText(R.string.loading).toString());
+        WaitDialog.show(this,"Loading");
         mLogic.danhsachthanhphan(true);
-        List<String> dataset = new LinkedList<>(Arrays.asList("Món ăn", "Nước uống"));
+        List<String> dataset = new LinkedList<>(Arrays.asList(getText(R.string.thucan).toString(),getText(R.string.nuocuong).toString()));
         spnThanhPhan_ds.attachDataSource(dataset);
         spnThanhPhan_ds.addOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mDialog.showDialog(getText(R.string.loading).toString());
+                WaitDialog.show(DanhSachThanhPhanActivity.this,"Loading");
                 if(i==0)
                     mLogic.danhsachthanhphan(true);
                 else
@@ -77,8 +76,6 @@ public class DanhSachThanhPhanActivity extends AppCompatActivity implements iVie
         mLogic = new logicThanhPhan(this);
         spnThanhPhan_ds = findViewById(R.id.nice_spinnerthanhphan);
         rclvDanhSach = findViewById(R.id.rclvThanhPhan_tp);
-        mDialog = new CustomDialogLoading(this);
-
         toolbar = findViewById(R.id.toolbar_dsthanhphan);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -103,7 +100,7 @@ public class DanhSachThanhPhanActivity extends AppCompatActivity implements iVie
     @Override
     public void result_danhsachthanhphan(ArrayList<objthanhphan> list) {
         listThanhPhan = new ArrayList<>();
-        mDialog.dismissDialog();
+        WaitDialog.dismiss();
         if(list!=null){
             listThanhPhan = list;
             mAdapter = new aRclvThanhPhan(this,list);

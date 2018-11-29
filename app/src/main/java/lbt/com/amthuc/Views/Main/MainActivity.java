@@ -49,17 +49,19 @@ public class MainActivity extends AppCompatActivity implements ilogin {
 
     private void phanquyen() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null){
+        final objnguoidung_app nguoidung = mLogin.getDataNguoiDung();
+        if(user!=null && nguoidung!=null){
             imvLogin.setVisibility(View.GONE);
             imvUser.setVisibility(View.VISIBLE);
-            if(mLogin.getImage(mLogin.getDataNguoiDung().getAnhdaidien())!=null)
-                imvUser.setImageDrawable(mLogin.getImage(mLogin.getDataNguoiDung().getAnhdaidien()));
+
+            if(!nguoidung.getNguoidung().getAvatar().matches(""))
+                imvUser.setImageDrawable(mLogin.getImage(nguoidung.getAnhdaidien()));
             else
                 imvUser.setImageResource(R.drawable.defaultuser);
             imvUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(!mLogin.getDataNguoiDung().getNguoidung().isQuanly())
+                    if(!nguoidung.getNguoidung().isQuanly())
                         startActivity(new Intent(MainActivity.this,TaiKhoanMainActivity.class));
                     else
                         startActivity(new Intent(MainActivity.this,AdminActivity.class));
@@ -150,10 +152,7 @@ public class MainActivity extends AppCompatActivity implements ilogin {
 
     }
 
-    @Override
-    public void result_dangnhap_sdt(boolean isSuccess) {
 
-    }
 
     @Override
     public void code(String code) {

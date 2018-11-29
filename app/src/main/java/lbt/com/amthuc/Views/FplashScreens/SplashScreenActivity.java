@@ -1,20 +1,25 @@
 package lbt.com.amthuc.Views.FplashScreens;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.google.gson.Gson;
 import com.ldoublem.loadingviewlib.view.LVCircularJump;
 
 import lbt.com.amthuc.Presenters.FplashScreens.igetdataapp;
 import lbt.com.amthuc.Presenters.FplashScreens.lgetdataapp;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
+import lbt.com.amthuc.models.objectClass.app.objnguoidung_app;
 
 public class SplashScreenActivity extends AppCompatActivity implements igetdataapp {
 
@@ -30,6 +35,11 @@ public class SplashScreenActivity extends AppCompatActivity implements igetdataa
         mLVCircularJump =  findViewById(R.id.lv_CircularJump);
         mLVCircularJump.setViewColor(Color.WHITE);
         mLVCircularJump.startAnim();
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("dataUser",Context.MODE_PRIVATE);
+        String strUser = sharedPreferences.getString("user","");
+        Log.e("kiemtra","user: "+strUser);
 
     }
 

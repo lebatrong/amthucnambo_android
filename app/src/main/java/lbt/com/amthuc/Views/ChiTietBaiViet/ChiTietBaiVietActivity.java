@@ -26,7 +26,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigkoo.alertview.AlertView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.kongzue.dialog.v2.DialogSettings;
+import com.kongzue.dialog.v2.SelectDialog;
 import com.uuch.adlibrary.AdConstant;
 import com.uuch.adlibrary.AdManager;
 import com.uuch.adlibrary.bean.AdInfo;
@@ -43,6 +46,7 @@ import lbt.com.amthuc.Presenters.Main.lchitietbaiviet;
 import lbt.com.amthuc.Presenters.FplashScreens.lgetdataapp;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.Views.LoginRegister.MainLoginActivity;
+import lbt.com.amthuc.Views.TaiKhoan.TaiKhoanMainActivity;
 import lbt.com.amthuc.customAdapter.aRclvBinhLuan;
 import lbt.com.amthuc.customAdapter.aRclvChung;
 import lbt.com.amthuc.customAdapter.aRclvHinhChiTiet;
@@ -70,6 +74,7 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
     TextView tvTen,tvthongkesosao,tvsosao;
 
     LinearLayout lnlgioithieu, lnldanhgia;
+
 
 
     //ĐÁNH GIÁ
@@ -436,7 +441,17 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
 
 
         mRclvhinh = (RecyclerView) findViewById(R.id.rclvHinhChiTiet);
-       // mListHinh = mBaiViet.getChitiet().getHinh();
+
+
+        DialogSettings.blur_alpha = 200;
+        DialogSettings.use_blur = true;
+        DialogSettings.type = DialogSettings.TYPE_IOS;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DialogSettings.unloadAllDialog();
     }
 
     @Override
@@ -511,29 +526,29 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
     }
 
     private void showDialog(String mess, final boolean isLuu){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setMessage(mess);
-        builder.setNegativeButton(getText(R.string.huy), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
 
-        builder.setPositiveButton(getText(R.string.ok), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if(isLuu){
-                    lchitiet.luubaivietluu(mBaiViet.getIdbaiviet());
-                }else{
-                    lchitiet.xoabaivietluu(mBaiViet.getIdbaiviet());
-                }
-            }
-        });
+        SelectDialog.show(this,
+                mess,
+                null,
+                getText(R.string.xacnhan).toString(),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(isLuu){
+                            lchitiet.luubaivietluu(mBaiViet.getIdbaiviet());
+                        }else{
+                            lchitiet.xoabaivietluu(mBaiViet.getIdbaiviet());
+                        }
+                    }
+                }, getText(R.string.huy).toString()
+                , new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
 
-        Dialog dialog = builder.create();
-        dialog.show();
+
     }
 
     @Override

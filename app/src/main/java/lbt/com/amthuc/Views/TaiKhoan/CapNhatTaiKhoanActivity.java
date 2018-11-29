@@ -16,6 +16,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.ParseException;
@@ -29,7 +31,6 @@ import lbt.com.amthuc.Presenters.Account.lAccount;
 import lbt.com.amthuc.Presenters.LoginRegister.ilogin;
 import lbt.com.amthuc.Presenters.LoginRegister.llogin;
 import lbt.com.amthuc.R;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.models.objectClass.app.objnguoidung_app;
 import lbt.com.amthuc.models.objectClass.firebase.objnguoidungs;
@@ -48,8 +49,6 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
 
     private int REQUEST_CODE_IMAGE = 1;
     private boolean isTaiHinh;
-
-    CustomDialogLoading mDialogLoading;
 
     objnguoidung_app mNguoiDung;
 
@@ -76,7 +75,7 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
         btnChinhSuaMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDialogLoading.showDialog(getText(R.string.dangcapnhatlai).toString());
+                WaitDialog.show(CapNhatTaiKhoanActivity.this,getText(R.string.dangcapnhatlai).toString());
                 mAccount.resetPassword();
             }
         });
@@ -141,7 +140,7 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
         btnCapNhatThongTin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDialogLoading.showDialog(getText(R.string.dangcapnhatlai).toString());
+                WaitDialog.show(CapNhatTaiKhoanActivity.this,getText(R.string.dangcapnhatlai).toString());
                 try {
                     String ht = tilHoTen.getEditText().getText().toString();
                     String qq = tilQueQuan.getEditText().getText().toString();
@@ -184,8 +183,6 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
         this.rdoNu = findViewById(R.id.rdonu);
         this.crlhinhnen = findViewById(R.id.crlhinhnen);
 
-        mDialogLoading = new CustomDialogLoading(this);
-
        mLogin = new llogin(this,this);
        mAccount = new lAccount(this,this);
 
@@ -214,10 +211,7 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
 
     }
 
-    @Override
-    public void result_dangnhap_sdt(boolean isSuccess) {
 
-    }
 
     @Override
     public void code(String code) {
@@ -246,7 +240,7 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
 
     @Override
     public void result_capnhatthongtin(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(isSuccess)
             Toast.makeText(this, getText(R.string.capnhatthanhcong), Toast.LENGTH_SHORT).show();
         else
@@ -255,7 +249,7 @@ public class CapNhatTaiKhoanActivity extends AppCompatActivity implements ilogin
 
     @Override
     public void result_capnhatmatkhau(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(isSuccess)
             Toast.makeText(this, getText(R.string.kiemtramail), Toast.LENGTH_SHORT).show();
         else

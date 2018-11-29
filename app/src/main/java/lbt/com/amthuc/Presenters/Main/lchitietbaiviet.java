@@ -428,10 +428,7 @@ public class lchitietbaiviet implements igetdataapp, ilogin {
 
     }
 
-    @Override
-    public void result_dangnhap_sdt(boolean isSuccess) {
 
-    }
 
     @Override
     public void code(String code) {

@@ -1,6 +1,7 @@
 package lbt.com.amthuc.Views.TaiKhoan;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +15,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.kongzue.dialog.v2.DialogSettings;
+import com.kongzue.dialog.v2.SelectDialog;
 
 import java.util.ArrayList;
 
@@ -51,7 +55,7 @@ public class TaiKhoanMainActivity extends AppCompatActivity implements ilogin, i
     ArrayList<objbaiviet_app> mListBaiViet, mListLoc;
     aRclvDacSan adapterBaiViet;
 
-    AlertView mAlertView;
+
 
     Spinner spnLoc;
 
@@ -117,24 +121,26 @@ public class TaiKhoanMainActivity extends AppCompatActivity implements ilogin, i
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAlertView = new AlertView(getText(R.string.banmuondangxuat).toString(),
-                        null, getText(R.string.ok).toString()
-                        , new String[]{getText(R.string.huy).toString()},
+
+                SelectDialog.show(TaiKhoanMainActivity.this,
+                        getText(R.string.banmuondangxuat).toString(),
                         null,
-                        TaiKhoanMainActivity.this,
-                        AlertView.Style.Alert,
-                        new OnItemClickListener() {
-                            @Override
-                            public void onItemClick(Object o, int position) {
-                                if(position==-1){
-                                    FirebaseAuth.getInstance().signOut();
-                                    finish();
-                                }else
-                                    mAlertView.dismiss();
-                            }
-                        }).setCancelable(false)
-                        .setOnDismissListener(null);
-                mAlertView.show();
+                        getText(R.string.ok).toString(),
+                        new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseAuth.getInstance().signOut();
+                        finish();
+                    }
+                }, getText(R.string.huy).toString()
+                        , new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+
             }
         });
     }
@@ -203,8 +209,18 @@ public class TaiKhoanMainActivity extends AppCompatActivity implements ilogin, i
 
         rclvBaiVietDaLuu = findViewById(R.id.rclvBaiVietDaLuu);
 
+        DialogSettings.blur_alpha = 200;
+        DialogSettings.use_blur = true;
+        DialogSettings.type = DialogSettings.TYPE_IOS;
+
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DialogSettings.unloadAllDialog();
+    }
 
 
     @Override
@@ -231,10 +247,7 @@ public class TaiKhoanMainActivity extends AppCompatActivity implements ilogin, i
             imvgioitinh.setImageResource(R.drawable.gioitinhnu);
     }
 
-    @Override
-    public void result_dangnhap_sdt(boolean isSuccess) {
 
-    }
 
     @Override
     public void code(String code) {

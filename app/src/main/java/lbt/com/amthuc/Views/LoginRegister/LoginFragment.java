@@ -18,12 +18,12 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.kongzue.dialog.v2.WaitDialog;
 
 import lbt.com.amthuc.Presenters.LoginRegister.ilogin;
 import lbt.com.amthuc.Presenters.LoginRegister.llogin;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.utils.CountryData;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objnguoidung_app;
 
 
@@ -46,7 +46,7 @@ public class LoginFragment extends Fragment implements ilogin{
     FirebaseAuth mAuth;
     CountDownTimer cdt;
 
-    CustomDialogLoading mDialogLoading;
+
 
 
     @Override
@@ -123,7 +123,7 @@ public class LoginFragment extends Fragment implements ilogin{
                     if (!tilcode.getEditText().getText().toString().isEmpty()) {
                         if (tilcode.getEditText().getText().toString().length() == 6) {
                             tilcode.setErrorEnabled(false);
-                            mDialogLoading.showDialog("Loading");
+                            WaitDialog.show(getContext(), "Loading");
                             VerryCode();
                         } else {
                             tilcode.setFocusable(true);
@@ -154,7 +154,7 @@ public class LoginFragment extends Fragment implements ilogin{
             tilsdt.setError(getText(R.string.sodienthoaikhonghople));
             tilsdt.requestFocus();
         }else {
-            mDialogLoading.showDialog("Loading");
+            WaitDialog.show(getContext(), "Loading");
             tilsdt.setErrorEnabled(false);
             tilsdt.setError("");
             String phoneNumber = "+" + code + number;
@@ -182,7 +182,7 @@ public class LoginFragment extends Fragment implements ilogin{
                 String pwd = tilPwd.getEditText().getText().toString();
 
                 if(mLogin.checkLogic(tilEmail,tilPwd)){
-                    mDialogLoading.showDialog(getText(R.string.dangdangnhap).toString());
+                    WaitDialog.show(getContext(),getText(R.string.dangdangnhap).toString());
                     tilEmail.setEnabled(false);
                     tilPwd.setEnabled(false);
                     mLogin.loginWithEmailPassword(email,pwd);
@@ -222,7 +222,6 @@ public class LoginFragment extends Fragment implements ilogin{
         tvCodePhone = v.findViewById(R.id.tvcodePhone);
 
 
-        mDialogLoading = new CustomDialogLoading(getContext());
 
         mLogin = new llogin(this,getContext());
         mAuth = FirebaseAuth.getInstance();
@@ -247,6 +246,7 @@ public class LoginFragment extends Fragment implements ilogin{
     public void ResultLogin(boolean isSuccess) {
         tilEmail.setEnabled(true);
         tilPwd.setEnabled(true);
+        WaitDialog.dismiss();
         if(isSuccess){
             getActivity().finish();
         }else
@@ -259,19 +259,11 @@ public class LoginFragment extends Fragment implements ilogin{
     }
 
 
-    @Override
-    public void result_dangnhap_sdt(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
-        if(isSuccess){
-            getActivity().finish();
-        }else {
-            Toast.makeText(getContext(), getText(R.string.dangnhapthatbai), Toast.LENGTH_SHORT).show();
-        }
-    }
+
 
     @Override
     public void code(String code) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         codeSent = code;
     }
 

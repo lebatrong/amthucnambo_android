@@ -5,8 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,17 +17,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.kongzue.dialog.v2.WaitDialog;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import lbt.com.amthuc.Presenters.Account.ChinhSuaBaiViet.logicChinhSuaBaiViet;
-import lbt.com.amthuc.Presenters.Account.DangBaiViet.logicDangBaiViet;
 import lbt.com.amthuc.R;
-import lbt.com.amthuc.Views.TaiKhoan.dangbaiviet.iViewDangBaiViet;
 import lbt.com.amthuc.models.objectClass.firebase.objchitietbaiviet;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
@@ -70,7 +66,6 @@ public class ChinhSuaBaiVietActivity extends AppCompatActivity implements iViewC
     logicChinhSuaBaiViet mLogicChinhSua;
 
 
-    CustomDialogLoading mDialogLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +86,9 @@ public class ChinhSuaBaiVietActivity extends AppCompatActivity implements iViewC
             mBaiVietEdit = (objbaiviet_app) bundle.getSerializable("baiviet");
             listKhuVuc = mGetData.getListKhuVuc();
             setData(mBaiVietEdit);
+           // Log.e("Kiemtra", new Gson().toJson(mBaiVietEdit));
+        }else {
+            finish();
         }
     }
 
@@ -315,8 +313,6 @@ public class ChinhSuaBaiVietActivity extends AppCompatActivity implements iViewC
         edtGioiThieu = findViewById(R.id.edtgioithieu_editbv);
         edtTen = findViewById(R.id.edttenbaiviet_editbv);
 
-        mDialogLoading = new CustomDialogLoading(this);
-
     }
 
     private void actionSelectMultiImage() {
@@ -467,12 +463,12 @@ public class ChinhSuaBaiVietActivity extends AppCompatActivity implements iViewC
 
         mLogicChinhSua.capnhatbaiviet(paths,mBaiVietEdit,chitiet);
         btnLuu.setEnabled(false);
-        mDialogLoading.showDialog("Loading..");
+        WaitDialog.show(this,"Loading");
     }
 
     @Override
     public void resultDangBaiViet(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+       WaitDialog.dismiss();
         if(isSuccess){
             Toast.makeText(this, getText(R.string.chinhsuabaivietthanhcong), Toast.LENGTH_SHORT).show();
             finish();

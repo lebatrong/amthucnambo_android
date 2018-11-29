@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        android:text="@string/tenthanhphan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tvtenthanhphan_dialogedit"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        android:text="@string/tenthanhphan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"
+            android:text="@string/thanhphangoiy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnChonThanhPhan_dialogdiet"
+            android:background="@drawable/button_loc"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/chonthanhphan"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tvgoiy_dialogedit"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        android:text="aaaaaaaaaaaaaaaaaaaaaaa, nước uống mới"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btnCapNhatTP_dialogedit"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/capnhat"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/button_green"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+</LinearLayout>

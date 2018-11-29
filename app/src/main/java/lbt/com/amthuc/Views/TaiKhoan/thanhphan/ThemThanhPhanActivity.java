@@ -16,12 +16,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.util.ArrayList;
 
 import lbt.com.amthuc.Presenters.Account.ThanhPhan.logicThanhPhan;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
-import lbt.com.amthuc.utils.CustomDialogLoading;
+
 
 public class ThemThanhPhanActivity extends AppCompatActivity implements iViewThanhPhan {
 
@@ -38,8 +40,6 @@ public class ThemThanhPhanActivity extends AppCompatActivity implements iViewTha
     ArrayList<EditText> arrEditText;
 
     RadioButton rdoThucAn;
-
-    CustomDialogLoading mDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +58,26 @@ public class ThemThanhPhanActivity extends AppCompatActivity implements iViewTha
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<String> listTen = new ArrayList<>();
-                for (EditText edt : arrEditText){
-                    listTen.add(edt.getText().toString());
+                btnThem.setEnabled(false);
+                boolean khongcotrong = true;
+                for(EditText edt : arrEditText){
+                    if(edt.getText().toString().matches("")){
+                        khongcotrong = false;
+                        break;
+                    }
                 }
+                if(khongcotrong) {
+                    ArrayList<String> listTen = new ArrayList<>();
+                    for (EditText edt : arrEditText) {
+                        listTen.add(edt.getText().toString());
+                    }
 
-                mLogic.themthanhphan(listTen,rdoThucAn.isChecked());
-                mDialog.showDialog(getText(R.string.loading).toString());
+                    mLogic.themthanhphan(listTen, rdoThucAn.isChecked());
+                    WaitDialog.show(ThemThanhPhanActivity.this, getText(R.string.loading).toString());
+                }else {
+                    btnThem.setEnabled(true);
+                    Toast.makeText(ThemThanhPhanActivity.this,getText(R.string.tenthanhphankhongtrong).toString(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -145,12 +158,12 @@ public class ThemThanhPhanActivity extends AppCompatActivity implements iViewTha
         btnThem = findViewById(R.id.btnthemthanhphan);
         rdoThucAn = findViewById(R.id.rdoThucAn_ThemTP);
 
-        mDialog = new CustomDialogLoading(this);
     }
 
     @Override
     public void result_themthanhphan(boolean isSuccess) {
-        mDialog.dismissDialog();
+        btnThem.setEnabled(true);
+        WaitDialog.dismiss();
         setupSpiner();
         if(isSuccess){
             Toast.makeText(this, getText(R.string.themthanhphanthanhcong), Toast.LENGTH_SHORT).show();

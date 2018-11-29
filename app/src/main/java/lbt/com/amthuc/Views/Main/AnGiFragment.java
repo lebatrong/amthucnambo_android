@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.util.ArrayList;
 
 import lbt.com.amthuc.Presenters.Main.iangi;
@@ -23,7 +25,6 @@ import lbt.com.amthuc.Views.ChiTietBaiViet.ChiTietBaiVietActivity;
 import lbt.com.amthuc.Views.FplashScreens.IndexActivity;
 import lbt.com.amthuc.customAdapter.aRclvChung;
 import lbt.com.amthuc.customAdapter.aRclvDacSan;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 
@@ -40,7 +41,6 @@ public class AnGiFragment extends Fragment implements igetdataapp, iangi {
 
     langi mAnGi;
 
-    CustomDialogLoading mDialogLoading;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +50,7 @@ public class AnGiFragment extends Fragment implements igetdataapp, iangi {
 
         initView(v);
         getData();
-        mDialogLoading.showDialog("Loading..");
+        WaitDialog.show(getContext(),"Loading");
 
 
         return v;
@@ -64,7 +64,6 @@ public class AnGiFragment extends Fragment implements igetdataapp, iangi {
         rclvDatBietAn = v.findViewById(R.id.rclvAnDatBiet);
 
         mAnGi = new langi(this);
-        mDialogLoading = new CustomDialogLoading(getContext());
 
 
 
@@ -128,7 +127,7 @@ public class AnGiFragment extends Fragment implements igetdataapp, iangi {
 
     @Override
     public void danhsachbaivietdacsan_AnGi(final ArrayList<objbaiviet_app> list) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(list!=null) {
             LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
             rclvDatBietAn.setHasFixedSize(true);
@@ -155,7 +154,7 @@ public class AnGiFragment extends Fragment implements igetdataapp, iangi {
     @Override
     public void danhsachbaivietphobien_AnGi(final ArrayList<objbaiviet_app> list) {
         //TẢI XONG DỮ LIỆU DISMISS DIALOG
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(list!=null) {
             LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
             rclvChungAn.setHasFixedSize(true);

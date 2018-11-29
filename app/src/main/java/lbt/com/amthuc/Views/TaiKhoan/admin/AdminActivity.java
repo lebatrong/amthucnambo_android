@@ -29,6 +29,8 @@ import com.bigkoo.alertview.OnItemClickListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.kongzue.dialog.v2.DialogSettings;
+import com.kongzue.dialog.v2.SelectDialog;
 import com.kyleduo.switchbutton.SwitchButton;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -39,6 +41,8 @@ import lbt.com.amthuc.Presenters.Account.admin.logicAdmin;
 import lbt.com.amthuc.Presenters.LoginRegister.ilogin;
 import lbt.com.amthuc.Presenters.LoginRegister.llogin;
 import lbt.com.amthuc.R;
+import lbt.com.amthuc.Views.TaiKhoan.TaiKhoanMainActivity;
+import lbt.com.amthuc.Views.TaiKhoan.ThemGoiY.ThemGoiYActivity;
 import lbt.com.amthuc.Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity;
 import lbt.com.amthuc.Views.TaiKhoan.thanhphan.ThemThanhPhanActivity;
 import lbt.com.amthuc.Views.ChiTietBaiViet.ChiTietBaiVietActivity;
@@ -245,6 +249,16 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
 
         mGetData = new getDataApp(this);
 
+        DialogSettings.blur_alpha = 200;
+        DialogSettings.use_blur = true;
+        DialogSettings.type = DialogSettings.TYPE_IOS;
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DialogSettings.unloadAllDialog();
     }
 
     private void getData() {
@@ -267,10 +281,7 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
                 }
             }
 
-            @Override
-            public void result_dangnhap_sdt(boolean isSuccess) {
 
-            }
 
             @Override
             public void code(String code) {
@@ -293,25 +304,23 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
 
 
     private void dialogDangXuat(){
-        mAlertView = new AlertView(getText(R.string.banmuondangxuat).toString(),
-                null, getText(R.string.ok).toString()
-                , new String[]{getText(R.string.huy).toString()},
+        SelectDialog.show(this,
+                getText(R.string.banmuondangxuat).toString(),
                 null,
-                this,
-                AlertView.Style.Alert,
-                new OnItemClickListener() {
-            @Override
-            public void onItemClick(Object o, int position) {
-                if(position==-1){
-                    FirebaseAuth.getInstance().signOut();
-                    finish();
-                }else
-                    mAlertView.dismiss();
-                //Toast.makeText(AdminActivity.this, position+"", Toast.LENGTH_SHORT).show();
-            }
-        }).setCancelable(false)
-                .setOnDismissListener(null);
-        mAlertView.show();
+                getText(R.string.ok).toString(),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseAuth.getInstance().signOut();
+                        finish();
+                    }
+                }, getText(R.string.huy).toString()
+                , new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
 
     }
 
@@ -495,6 +504,7 @@ public class AdminActivity extends AppCompatActivity implements iViewAdmin, Navi
                 startActivity(new Intent(this,BaiVietDaLuuActivity.class));
                 break;
             case R.id.itthemgoiy:
+                startActivity(new Intent(this,ThemGoiYActivity.class));
                 break;
             case R.id.itthemthanhphan:
                 startActivity(new Intent(this,ThemThanhPhanActivity.class));

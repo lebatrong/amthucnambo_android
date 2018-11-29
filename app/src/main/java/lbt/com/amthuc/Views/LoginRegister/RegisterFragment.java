@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,8 +23,6 @@ import java.util.Calendar;
 import lbt.com.amthuc.Presenters.LoginRegister.iregister;
 import lbt.com.amthuc.Presenters.LoginRegister.lregister;
 import lbt.com.amthuc.R;
-import lbt.com.amthuc.utils.CustomDialogLoading;
-
 
 public class RegisterFragment extends Fragment implements iregister {
 
@@ -32,7 +32,6 @@ public class RegisterFragment extends Fragment implements iregister {
 
     lregister mDangKy;
 
-    CustomDialogLoading mDialogLoading;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +69,7 @@ public class RegisterFragment extends Fragment implements iregister {
 
                 if(mDangKy.checkLogic(tilEmail,tilHoTen,tilQueQuan,tilPwd,tilPwdNhapLai)){
                     mDangKy.dangkytaikhoan(email,pwd,hoten,quequan,gioitinh,ngaysinh);
-                    mDialogLoading.showDialog(getText(R.string.dangdangky).toString());
+                    WaitDialog.show(getContext(),getText(R.string.dangdangky).toString());
                 }else{
                     Toast.makeText(getContext(), getText(R.string.dulieukhonghople), Toast.LENGTH_SHORT).show();
                 }
@@ -110,7 +109,6 @@ public class RegisterFragment extends Fragment implements iregister {
     private void initView(View v) {
         mDangKy = new lregister(this,getContext());
 
-        mDialogLoading = new CustomDialogLoading(getContext());
 
         tilEmail = v.findViewById(R.id.tilemail_res);
         tilHoTen = v.findViewById(R.id.tilhoten_res);
@@ -127,7 +125,7 @@ public class RegisterFragment extends Fragment implements iregister {
 
     @Override
     public void resultDangky(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
         if(isSuccess){
             getActivity().finish();
         }else{

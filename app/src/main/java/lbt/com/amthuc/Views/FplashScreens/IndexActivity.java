@@ -7,18 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.kongzue.dialog.v2.WaitDialog;
+
 import lbt.com.amthuc.Presenters.FplashScreens.igetdataapp;
 import lbt.com.amthuc.Presenters.FplashScreens.lgetdataapp;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.Views.Main.MainActivity;
-import lbt.com.amthuc.utils.CustomDialogLoading;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 
 public class IndexActivity extends AppCompatActivity implements igetdataapp {
 
     Button btnbatdau,btnchonkhuvuc;
     lgetdataapp mKhuVuc;
-    CustomDialogLoading mDialogLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class IndexActivity extends AppCompatActivity implements igetdataapp {
         btnchonkhuvuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDialogLoading.showDialog(getText(R.string.dangtaidulieu).toString());
+                WaitDialog.show(IndexActivity.this,getText(R.string.dangtaidulieu).toString());
                 mKhuVuc.getKhuVuc("KVMN");
             }
         });
@@ -65,7 +65,6 @@ public class IndexActivity extends AppCompatActivity implements igetdataapp {
 
 
     private void initView() {
-        mDialogLoading = new CustomDialogLoading(this);
         mKhuVuc = new lgetdataapp(this,this);
         btnbatdau = findViewById(R.id.btnbatdau);
         btnchonkhuvuc = findViewById(R.id.btnchontinhthanh);
@@ -86,7 +85,7 @@ public class IndexActivity extends AppCompatActivity implements igetdataapp {
 
     @Override
     public void loadkhuvuc(boolean isSuccess) {
-        mDialogLoading.dismissDialog();
+        WaitDialog.dismiss();
        if(isSuccess){
            Intent intent = new Intent(this,SelectKhuVucActivity.class);
            startActivity(intent);

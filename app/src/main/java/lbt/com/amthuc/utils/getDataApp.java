@@ -9,6 +9,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import lbt.com.amthuc.models.objectClass.app.objgoiychitiet_app;
 import lbt.com.amthuc.models.objectClass.app.objkhuvuc_app;
 import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
 
@@ -32,6 +33,14 @@ public class getDataApp {
         }
     }
 
+    public ArrayList<objthanhphan> getAllListThanhPhan(){
+        ArrayList<objthanhphan> mlistThanhPhan = getListThanhPhan("thanhphanmonan");
+        mlistThanhPhan.addAll(getListThanhPhan("thanhphannuocuong"));
+
+        return mlistThanhPhan;
+
+    }
+
     public ArrayList<objkhuvuc_app> getListKhuVuc(){
         SharedPreferences spf = context.getSharedPreferences("data_app",Context.MODE_PRIVATE);
         String data = spf.getString("khuvuc",null);
@@ -43,4 +52,6 @@ public class getDataApp {
             return null;
         }
     }
+
+
 }

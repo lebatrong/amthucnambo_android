@@ -194,6 +194,11 @@
     <string name="themthanhphanthanhcong">Thêm thành phần thành công!</string>
     <string name="themthanhphanthatbai">Thêm thành phần thất bại!</string>
     <string name="danhsachthanhphan">Danh sách thành phần</string>
+    <string name="tenthanhphankhongtrong">Tên thành phần không được trống!</string>
+    <string name="thanhphangoiy">Thành phần gợi ý:</string>
+    <string name="capnhat">Cập nhật</string>
+
+
 
 
 </resources>
