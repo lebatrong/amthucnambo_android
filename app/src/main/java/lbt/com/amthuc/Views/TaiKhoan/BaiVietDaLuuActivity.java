@@ -1,5 +1,6 @@
 package lbt.com.amthuc.Views.TaiKhoan;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,7 +63,7 @@ public class BaiVietDaLuuActivity extends AppCompatActivity implements ilogin, i
     private void setupRecyclerView() {
         mListBaiViet = new ArrayList<>();
         adapterBaiViet = new aRclvDacSan(this,mListBaiViet);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager((Context) this,LinearLayoutManager.VERTICAL,false);
         rclvBaiVietDaLuu.setHasFixedSize(false);
         rclvBaiVietDaLuu.setLayoutManager(linearLayoutManager);
         rclvBaiVietDaLuu.setAdapter(adapterBaiViet);
@@ -136,7 +137,7 @@ public class BaiVietDaLuuActivity extends AppCompatActivity implements ilogin, i
     public void result_loc(ArrayList<objbaiviet_app> list) {
         mListLoc = list;
         adapterBaiViet = new aRclvDacSan(this,list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager((Context) this,LinearLayoutManager.VERTICAL,false);
         rclvBaiVietDaLuu.setHasFixedSize(false);
         rclvBaiVietDaLuu.setLayoutManager(linearLayoutManager);
         rclvBaiVietDaLuu.setAdapter(adapterBaiViet);

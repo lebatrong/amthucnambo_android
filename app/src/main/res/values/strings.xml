@@ -188,7 +188,7 @@
 
     <string name="loaithanhphan">Loại thành phần:</string>
     <string name="soluongcanthem">Số lượng cần thêm:</string>
-    <string name="tenthanhphan">Tên thành phần</string>
+    <string name="tenthanhphan">Tên thành phần:</string>
     <string name="nhaptenthanhphan">Nhập tên thành phần</string>
     <string name="them">Thêm</string>
     <string name="themthanhphanthanhcong">Thêm thành phần thành công!</string>
@@ -196,6 +196,7 @@
     <string name="danhsachthanhphan">Danh sách thành phần</string>
     <string name="tenthanhphankhongtrong">Tên thành phần không được trống!</string>
     <string name="thanhphangoiy">Thành phần gợi ý:</string>
+    <string name="chongoiy">Chọn thành phần gợi ý</string>
     <string name="capnhat">Cập nhật</string>
 
 

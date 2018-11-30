@@ -4,6 +4,7 @@ import android.content.Context;
 
 import lbt.com.amthuc.Views.TaiKhoan.ThemGoiY.iViewThemGoiY;
 import lbt.com.amthuc.models.modelGoiY;
+import lbt.com.amthuc.models.objectClass.app.objgoiy_app;
 
 public class LogicGoiY implements impGoiY {
 
@@ -19,4 +20,11 @@ public class LogicGoiY implements impGoiY {
     public void danhsachgoiy() {
         mModel.danhsachgoiy();
     }
+
+    @Override
+    public void capnhatgoiy(objgoiy_app goiy) {
+        mModel.capnhatgoiy(goiy);
+    }
+
+
 }

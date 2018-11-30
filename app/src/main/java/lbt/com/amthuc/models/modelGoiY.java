@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +24,8 @@ import lbt.com.amthuc.models.objectClass.firebase.objthanhphan;
 import lbt.com.amthuc.utils.getDataApp;
 
 public class modelGoiY {
+
+    public String TAG = "modelGoiY";
 
     FirebaseDatabase mDatabase;
     iViewThemGoiY mView;
@@ -94,5 +98,27 @@ public class modelGoiY {
         mView.resultgoiy(listGoiYChiTiet);
 
     }
+
+
+    public void capnhatgoiy(objgoiy_app goiy) {
+        DatabaseReference mRef = mDatabase.getReference()
+                .child("goiys")
+                .child(goiy.getMathanhphan());
+        mRef.setValue(goiy.getListgoiy())
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG,e.toString());
+                        mView.resultCapNhatGoiY(false);
+                    }
+                })
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        mView.resultCapNhatGoiY(true);
+                    }
+                });
+    }
+
 
 }

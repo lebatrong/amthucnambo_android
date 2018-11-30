@@ -6,4 +6,5 @@ import lbt.com.amthuc.models.objectClass.app.objgoiychitiet_app;
 
 public interface iViewThemGoiY {
     void resultgoiy(ArrayList<objgoiychitiet_app> mlist);
+    void resultCapNhatGoiY(boolean isSuccess);
 }
