@@ -149,4 +149,20 @@
     <string name="loctheokhuvucfilter">Filter by region:</string>
     <string name="loctheoloaifilter">Filter by type:</string>
     <string name="dataixong">Download finished!</string>
+    <string name="themthanhphan">Add section</string>
+    <string name="goiy">Suggestions</string>
+    <string name="capnhatlaiten">Update Name:</string>
+    <string name="loitenthanhphan">Component name error!</string>
+    <string name="loaithanhphan">Component Type:</string>
+    <string name="soluongcanthem">Quantity needed:</string>
+    <string name="tenthanhphan">Component Name:</string>
+    <string name="nhaptenthanhphan">Enter the component name</string>
+    <string name="them">Add</string>
+    <string name="themthanhphanthanhcong">Add ingredients successfully!</string>
+    <string name="themthanhphanthatbai">Add component failure!</string>
+    <string name="danhsachthanhphan">List of ingredients</string>
+    <string name="tenthanhphankhongtrong">Component name can not be empty!</string>
+    <string name="thanhphangoiy">Suggested components:</string>
+    <string name="chongoiy">Select hint component</string>
+    <string name="capnhat">Update</string>
 </resources>
