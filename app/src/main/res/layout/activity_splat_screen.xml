@@ -11,7 +11,13 @@
     tools:context=".Views.FplashScreens.SplashScreenActivity">
 
 
+    <ImageView
+        android:src="@drawable/iconapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <com.ldoublem.loadingviewlib.view.LVCircularJump
+        android:layout_marginTop="10dp"
         android:id="@+id/lv_CircularJump"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
