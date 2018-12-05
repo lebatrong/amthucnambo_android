@@ -245,7 +245,7 @@
                             android:layout_height="1dp"
                             android:background="@color/colorLine"/>
 
-                        <!--GHI CHÚ-->
+                        <!--DIA CHI-->
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
@@ -269,8 +269,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
-
                         </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvxemtrenbando"
+                            android:layout_marginRight="5dp"
+                            android:gravity="right"
+                            android:textColor="#0118ac"
+                            android:text="@string/xemtrenbando"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
 
                         <View
                             android:layout_marginTop="5dp"

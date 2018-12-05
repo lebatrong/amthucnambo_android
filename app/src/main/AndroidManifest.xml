@@ -3,17 +3,29 @@
     package="lbt.com.amthuc">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
 
     <application
-        android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/API_MAP"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".Views.FplashScreens.SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -62,7 +74,8 @@
         <activity android:name=".Views.TaiKhoan.chinhsuabaiviet.ChinhSuaBaiVietActivity" />
         <activity android:name=".Views.TaiKhoan.thanhphan.ThemThanhPhanActivity" />
         <activity android:name=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity" />
-        <activity android:name=".Views.TaiKhoan.ThemGoiY.ThemGoiYActivity"></activity>
+        <activity android:name=".Views.TaiKhoan.ThemGoiY.ThemGoiYActivity" />
+        <activity android:name=".MapActivity"></activity>
     </application>
 
 </manifest>

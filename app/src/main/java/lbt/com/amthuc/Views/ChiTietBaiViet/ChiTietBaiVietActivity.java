@@ -40,6 +40,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import lbt.com.amthuc.MapActivity;
 import lbt.com.amthuc.Presenters.Main.ichitietbaiviet;
 import lbt.com.amthuc.Presenters.FplashScreens.igetdataapp;
 import lbt.com.amthuc.Presenters.Main.lchitietbaiviet;
@@ -71,7 +72,7 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
 
     lchitietbaiviet lchitiet;
 
-    TextView tvTen,tvthongkesosao,tvsosao;
+    TextView tvTen,tvthongkesosao,tvsosao, tvxemtrenbando;
 
     LinearLayout lnlgioithieu, lnldanhgia;
 
@@ -116,7 +117,21 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
 
         actionSetupMenu();
         actionSoSaoDanhGia();
+        actionXemTrenBanDo();
 
+    }
+
+    private void actionXemTrenBanDo() {
+        tvxemtrenbando.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("baiviet",mBaiViet);
+                Intent intent = new Intent(ChiTietBaiVietActivity.this,MapActivity.class);
+                intent.putExtra("data",bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -327,6 +342,7 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
         mRclvhinh.setHasFixedSize(true);
 
 
+
     }
 
 
@@ -441,6 +457,9 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
 
 
         mRclvhinh = (RecyclerView) findViewById(R.id.rclvHinhChiTiet);
+
+
+        tvxemtrenbando = findViewById(R.id.tvxemtrenbando);
 
 
         DialogSettings.blur_alpha = 200;

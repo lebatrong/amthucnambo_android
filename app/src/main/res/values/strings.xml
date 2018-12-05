@@ -1,4 +1,6 @@
 <resources>
+    <!--<string name="API_MAP" translatable="false">AIzaSyDWECPDWyYGSt0NoHkT30VT96neXdHmdbM</string>-->
+    <string name="API_MAP" translatable="false">AIzaSyAhLj6E8QJJE7rFRPQH3syclmr_sIf_KWw</string>
     <string name="app_name" translatable="false">Ẩm thực nam bộ</string>
     <string name="loikhuvuc">Lỗi khu vực!</string>
     <string name="chonvitri">Chọn vị trí</string>
@@ -198,8 +200,8 @@
     <string name="thanhphangoiy">Thành phần gợi ý:</string>
     <string name="chongoiy">Chọn thành phần gợi ý</string>
     <string name="capnhat">Cập nhật</string>
-
-
+    <string name="xemtrenbando">Xem trên bản đồ</string>
+    <string name="diachikhonghople">Địa chỉ không hợp lệ!</string>
 
 
 </resources>
