@@ -1,4 +1,4 @@
-package lbt.com.amthuc;
+package lbt.com.amthuc.Views.ChiTietBaiViet;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -17,6 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.kongzue.dialog.v2.WaitDialog;
 
+import lbt.com.amthuc.R;
 import lbt.com.amthuc.models.objectClass.GoogleMap.ObjGeocoding;
 import lbt.com.amthuc.models.objectClass.app.objbaiviet_app;
 import lbt.com.amthuc.retrofit2.ApiUtils;
@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class GoogleMapActivity extends AppCompatActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
 
@@ -40,15 +40,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
-        WaitDialog.show(this,"Loading");
-        initView();
+        setContentView(R.layout.activity_google_map);
 
+        initView();
+        WaitDialog.show(this,"Loading");
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
 
 
     }
@@ -61,7 +60,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         resultsGeocoding.enqueue(new Callback<ObjGeocoding>() {
             @Override
             public void onResponse(Call<ObjGeocoding> call, Response<ObjGeocoding> response) {
-                Log.e("kiemtra", new Gson().toJson(response.body()));
+
                 WaitDialog.dismiss();
                 ObjGeocoding obj = response.body();
                 if(obj.getStatus().matches("OK")) {
@@ -73,7 +72,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
                 }else {
-                    Toast.makeText(MapActivity.this, getText(R.string.diachikhonghople).toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GoogleMapActivity.this, getText(R.string.diachikhonghople).toString(), Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
@@ -81,17 +80,22 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             @Override
             public void onFailure(Call<ObjGeocoding> call, Throwable t) {
+                Toast.makeText(GoogleMapActivity.this, getText(R.string.khongcodulieu).toString(), Toast.LENGTH_SHORT).show();
                 Log.e("MAP",t.toString());
+                finish();
             }
         });
 
     }
 
     private void getData() {
+        mBaiViet = new objbaiviet_app();
         Bundle bundle = getIntent().getBundleExtra("data");
         if(bundle!=null){
+           // Log.e("kiemtra", new Gson().toJson((objbaiviet_app) bundle.getSerializable("baiviet")));
             mBaiViet = (objbaiviet_app) bundle.getSerializable("baiviet");
             getDataRetrofit2(mBaiViet);
+
         }else {
             WaitDialog.dismiss();
             finish();

@@ -1,20 +1,14 @@
 package lbt.com.amthuc.Views.ChiTietBaiViet;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.design.card.MaterialCardView;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -26,28 +20,20 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bigkoo.alertview.AlertView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.kongzue.dialog.v2.DialogSettings;
 import com.kongzue.dialog.v2.SelectDialog;
-import com.uuch.adlibrary.AdConstant;
-import com.uuch.adlibrary.AdManager;
-import com.uuch.adlibrary.bean.AdInfo;
-import com.uuch.adlibrary.transformer.DepthPageTransformer;
 import com.view.jameson.library.CardScaleHelper;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
 
-import lbt.com.amthuc.MapActivity;
 import lbt.com.amthuc.Presenters.Main.ichitietbaiviet;
 import lbt.com.amthuc.Presenters.FplashScreens.igetdataapp;
 import lbt.com.amthuc.Presenters.Main.lchitietbaiviet;
 import lbt.com.amthuc.Presenters.FplashScreens.lgetdataapp;
 import lbt.com.amthuc.R;
 import lbt.com.amthuc.Views.LoginRegister.MainLoginActivity;
-import lbt.com.amthuc.Views.TaiKhoan.TaiKhoanMainActivity;
 import lbt.com.amthuc.customAdapter.aRclvBinhLuan;
 import lbt.com.amthuc.customAdapter.aRclvChung;
 import lbt.com.amthuc.customAdapter.aRclvHinhChiTiet;
@@ -72,7 +58,7 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
 
     lchitietbaiviet lchitiet;
 
-    TextView tvTen,tvthongkesosao,tvsosao, tvxemtrenbando;
+    TextView tvTen,tvthongkesosao,tvsosao;
 
     LinearLayout lnlgioithieu, lnldanhgia;
 
@@ -97,13 +83,11 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
     ArrayList<objthanhphan> mlistThanhPhan;
 
 
+    LinearLayout lnlXemTrenBanDo;
+
     //RECYCLERVIEW
     private RecyclerView mRclvhinh;
-    private ImageView mBlurView;
     private CardScaleHelper mCardScaleHelper = null;
-    private Runnable mBlurRunnable;
-    private int mLastPos = -1;
-    private List<String> mListHinh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,14 +106,15 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
     }
 
     private void actionXemTrenBanDo() {
-        tvxemtrenbando.setOnClickListener(new View.OnClickListener() {
+        lnlXemTrenBanDo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("baiviet",mBaiViet);
-                Intent intent = new Intent(ChiTietBaiVietActivity.this,MapActivity.class);
+                Intent intent = new Intent(ChiTietBaiVietActivity.this,GoogleMapActivity.class);
                 intent.putExtra("data",bundle);
                 startActivity(intent);
+
             }
         });
     }
@@ -459,7 +444,8 @@ public class ChiTietBaiVietActivity extends AppCompatActivity implements igetdat
         mRclvhinh = (RecyclerView) findViewById(R.id.rclvHinhChiTiet);
 
 
-        tvxemtrenbando = findViewById(R.id.tvxemtrenbando);
+
+        lnlXemTrenBanDo = findViewById(R.id.lnlXemTrenBanDo);
 
 
         DialogSettings.blur_alpha = 200;

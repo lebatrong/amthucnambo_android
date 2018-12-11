@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
 
@@ -18,10 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/API_MAP"/>
-
+            android:value="@string/API_MAP" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -71,11 +72,20 @@
         <activity
             android:name=".Views.TaiKhoan.dangbaiviet.DangBaiVietActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Views.TaiKhoan.chinhsuabaiviet.ChinhSuaBaiVietActivity" />
-        <activity android:name=".Views.TaiKhoan.thanhphan.ThemThanhPhanActivity" />
-        <activity android:name=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity" />
-        <activity android:name=".Views.TaiKhoan.ThemGoiY.ThemGoiYActivity" />
-        <activity android:name=".MapActivity"></activity>
+        <activity
+            android:name=".Views.TaiKhoan.chinhsuabaiviet.ChinhSuaBaiVietActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Views.TaiKhoan.thanhphan.ThemThanhPhanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Views.TaiKhoan.thanhphan.DanhSachThanhPhanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Views.TaiKhoan.ThemGoiY.ThemGoiYActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Views.ChiTietBaiViet.GoogleMapActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

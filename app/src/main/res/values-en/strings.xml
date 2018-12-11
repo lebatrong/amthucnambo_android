@@ -165,4 +165,6 @@
     <string name="thanhphangoiy">Suggested components:</string>
     <string name="chongoiy">Select hint component</string>
     <string name="capnhat">Update</string>
+    <string name="xemtrenbando">" View on map"</string>
+    <string name="diachikhonghople">" Invalid address!"</string>
 </resources>
